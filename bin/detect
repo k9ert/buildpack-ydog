@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+cd $1
+[ -f pom.xml ] || exit 2
+if grep -q com.hybris.onpremise pom.xml ; then
+ echo "hybris"
+ exit 0
+fi
+exit 2
+
+
+
